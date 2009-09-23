@@ -8,9 +8,12 @@ body {
 	margin: 40px auto;
 }
 
+/***** navigation *****/
+ 
 #navigation {
 	font-family: Georgia, Times, serif;
 	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 #navigation ul {
@@ -43,8 +46,27 @@ body {
 	color: #666;
 	border-bottom: 4px solid #666;
 }
-/* I wonder if this could be generated programatically */
+/* could be generated programatically? */
 .index .index, .create .create, .list .list, .search .search {
 	color: #333 !important;
 	border-bottom: 4px solid #333;
+}
+/***** footer *****/
+
+#footer {
+	margin: 20px 0 0 0;
+	border-top: 5px double #333;
+	width: 800px;
+}
+/***** index *****/
+
+
+/***** create *****/
+#writing {
+  border: 1px solid #333;
+  padding: 4px;
+  width: 790px;
+  height: 400px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 16px;
 }

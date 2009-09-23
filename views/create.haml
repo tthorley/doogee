@@ -1,1 +1,4 @@
-%p create
+%form{:action => "/save", :method => "post"}
+  %textarea#writing{:name => "writing"}
+  %br
+  %input{:type => "submit", :value => "save"}

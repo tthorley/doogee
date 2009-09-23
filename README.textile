@@ -15,7 +15,7 @@ Before you start, you'll need to create the database file in the "data" director
 @sqlite3 entries.db < schema.sql@
 
 To start it up:
-@ruby diary-cow.rb@
+@ruby doogee.rb@
 
 Then open a browser to:
 @localhost:4567@

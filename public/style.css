@@ -1,0 +1,50 @@
+body {
+	text-align: center;
+}
+
+#page {
+	text-align: left;
+	width: 800px;
+	margin: 40px auto;
+}
+
+#navigation {
+	font-family: Georgia, Times, serif;
+	font-size: 18px;
+}
+
+#navigation ul {
+	margin: 0;
+	padding: 0 0 20px 10px;
+	border-bottom: 1px solid #333;
+	color: #333;
+}
+
+#navigation ul li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+
+#navigation a
+{
+  float: left;
+  line-height: 14px;
+  font-weight: bold;
+  margin: 0 10px 4px 10px;
+  text-decoration: none;
+  color: #999;
+	padding-bottom: 4px;
+	background: transparent;
+}
+
+#navigation a:hover {
+	color: #666;
+	border-bottom: 4px solid #666;
+}
+/* I wonder if this could be generated programatically */
+.index .index, .create .create, .list .list, .search .search {
+	color: #333 !important;
+	border-bottom: 4px solid #333;
+}

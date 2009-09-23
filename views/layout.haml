@@ -1,0 +1,22 @@
+- current_page = request.path_info.split("/")[1]
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en"}
+  %head
+    %meta{"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
+    %style @import url("style.css");
+  %body
+    #page{:class => current_page}
+      #navigation
+        %ul
+          %li 
+            %a{:href => '/index', :class => 'index'} Home
+          %li
+            %a{:href => '/create', :class => 'create'} Create Entry
+          %li
+            %a{:href => '/list', :class => 'list'} List Entries
+          %li
+            %a{:href => '/search', :class => 'search'} Search Entries
+      #content
+        = yield
+      #footer
+        %p= current_page

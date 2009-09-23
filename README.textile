@@ -1,0 +1,21 @@
+h2. doogee
+
+I wanted to keep a regular journal, but writing it out by hand was a pain.  
+I thought about using blogging software, but it seemed like overkill and
+I wanted to keep things simple.  So, here it is.
+
+* Database: sqlite3
+* Search: ferret
+* Interface: sinatra, haml
+* ORM: datamapper
+
+Therefore, you'll need the following gems: dm-core, do_sqlite3, ferret, haml, sinatra 
+
+Before you start, you'll need to create the database file in the "data" directory:
+@sqlite3 entries.db < schema.sql@
+
+To start it up:
+@ruby diary-cow.rb@
+
+Then open a browser to:
+@localhost:4567@

@@ -1,5 +1,5 @@
 CREATE TABLE entries(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  dated      DATE,
+  day        DATE,
   content    TEXT
 );

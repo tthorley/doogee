@@ -27,5 +27,5 @@ class Date
 end
 
 def entry_for(date)
-  Entry.first(:dated => date.for_entry)
+  Entry.first(:day => date.for_entry)
 end

@@ -23,7 +23,7 @@ end
 
 post '/save' do
   content = params[:writing]
-  entry = Entry.new(:dated => TODAY, :content => content)
+  entry = Entry.new(:day => TODAY, :content => content)
   entry.save
   redirect '/view/' + date.for_url
 end

@@ -25,7 +25,7 @@ post '/save' do
   content = params[:writing]
   entry = Entry.new(:day => TODAY, :content => content)
   entry.save
-  redirect '/view/' + date.for_url
+  redirect '/view/' + TODAY.for_url
 end
 
 get '/edit/:month-:day-:year/?' do

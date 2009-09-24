@@ -1,5 +1,5 @@
 CREATE TABLE entries(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  datestamp DATETIME,
+  dated      DATE,
   content    TEXT
 );

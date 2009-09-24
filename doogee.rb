@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 require 'configuration'
+
+TODAY = Date.today
 
 get '/' do
   redirect '/index'
@@ -11,14 +14,34 @@ get '/index' do
 end
 
 get '/create' do
-  haml :create
+  if entry_for(TODAY)
+    redirect '/edit/' + TODAY.for_url
+  else
+    haml :create
+  end
 end
 
-get '/edit/:month/:day/:year/?' do
+post '/save' do
+  content = params[:writing]
+  entry = Entry.new(:dated => TODAY, :content => content)
+  entry.save
+  redirect '/view/' + date.for_url
+end
+
+get '/edit/:month-:day-:year/?' do
+  date = Date.from_params(params)
+  @entry = entry_for(date)
   haml :edit
 end
 
-get '/view/:month/:day/:year/?' do
+post '/modify/:id' do
+  @entry = Entry.get(params[:id])
+  redirect :view
+end
+
+get '/view/:month-:day-:year/?' do
+  date = Date.from_params(params)
+  @entry = entry_for(date)
   haml :view
 end
 

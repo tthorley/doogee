@@ -11,11 +11,9 @@ I wanted to keep things simple.  So, here it is.
 
 Therefore, you'll need the following gems: dm-core, do_sqlite3, ferret, haml, sinatra 
 
-Before you start, you'll need to create the database file in the "data" directory:
+For the initial setup, you'll need to create the database file in the "data" directory:
 @sqlite3 entries.db < schema.sql@
 
-To start it up:
-@ruby doogee.rb@
-
-Then open a browser to:
-@localhost:4567@
+To use it:
+1. run @ruby doogee.rb@ from the command line
+2. open a browser to @localhost:4567@

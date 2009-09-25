@@ -35,8 +35,10 @@ get '/edit/:month-:day-:year/?' do
 end
 
 post '/modify/:id' do
-  @entry = Entry.get(params[:id])
-  redirect :view
+  entry = Entry.get(params[:id])
+  entry.content = params[:editing]
+  entry.save
+  redirect '/view/' + entry.day.for_url
 end
 
 get '/view/:month-:day-:year/?' do

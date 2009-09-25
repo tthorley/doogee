@@ -62,7 +62,7 @@ body {
 
 
 /***** create *****/
-#writing {
+#writing, #editing {
   border: 1px solid #333;
   padding: 4px;
   width: 790px;

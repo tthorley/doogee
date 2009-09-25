@@ -1,1 +1,4 @@
-%p edit
+%form{:action => "/modify/#{@entry.id}", :method => "post"}
+  %textarea#editing{:name => "editing"}= @entry.content
+  %br
+  %input{:type => "submit", :value => "save"}

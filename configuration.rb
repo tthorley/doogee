@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 require 'ferret'
+include Ferret
 
 # change these if you want to use some other file
 # somewhere else for whatever reason
@@ -16,6 +17,8 @@ class Date
   def for_url
     self.strftime("%m-%d-%Y")
   end
+  
+  alias :for_index :for_url
   
   def for_entry
     self.strftime("%Y-%m-%d")

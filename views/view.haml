@@ -1,1 +1,5 @@
 %pre#display= @entry.content
+
+%a{:href => "/edit/#{@entry.day.for_url}", :style => "text-decoration: none;"}
+  %button
+    edit

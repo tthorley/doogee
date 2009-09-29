@@ -25,8 +25,8 @@ post '/save' do
   content = params[:writing]
   entry = Entry.new(:day => TODAY, :content => content)
   entry.save
-  @index ||= Index::Index.new(:path => './data/search-indexes')
-  @index << {:id => entry.id, :date => entry.day.for_index, :content => entry.content}
+  @index ||= get_ferret_index
+  @index.add_entry(entry)
   redirect '/view/' + TODAY.for_url
 end
 
@@ -40,6 +40,11 @@ post '/modify/:id' do
   entry = Entry.get(params[:id])
   entry.content = params[:editing]
   entry.save
+  @index ||= get_ferret_index
+  # you can't modify something that is in the index, so
+  # you have to delete and readd
+  @index.delete_entry_with_id(entry.id)
+  @index.add_entry(entry)
   redirect '/view/' + entry.day.for_url
 end
 

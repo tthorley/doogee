@@ -26,7 +26,7 @@ post '/save' do
   entry = Entry.new(:day => TODAY, :content => content)
   entry.save
   @index ||= Index::Index.new(:path => './data/search-indexes')
-  @index << {:date => entry.day.for_index, :content => entry.content}
+  @index << {:id => entry.id, :date => entry.day.for_index, :content => entry.content}
   redirect '/view/' + TODAY.for_url
 end
 

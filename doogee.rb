@@ -60,5 +60,10 @@ get '/list' do
 end
 
 get '/search' do
+  if params["query"]
+    @results = Entry.all
+  else
+    @results = []
+  end
   haml :search
 end

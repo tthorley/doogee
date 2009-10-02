@@ -1,1 +1,11 @@
-%p search
+%form{:action => "/search", :method => "get"}
+  %label{:for => "query"} search: 
+  %input{:type => "text", :name => "query", :id => "query"}
+  %input{:type => "submit", :value => "submit"}
+  
+#results
+  - @results.each do |result|
+    %p
+      %a{:href => "/view/" + result.day.for_url}= result.day.for_url
+      = result.content[0..100]
+%p= @query

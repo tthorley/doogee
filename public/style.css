@@ -2,6 +2,9 @@ body {
 	text-align: center;
 }
 
+pre {
+	white-space: pre-line;
+}
 #page {
 	text-align: left;
 	width: 800px;
